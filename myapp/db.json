@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "name": "Akash Behera",
+      "email": "rukmana657@gmail.com",
+      "mobile": "8260522156",
+      "id": "1"
+    },
+    {
+      "name": "Ritesh Singh",
+      "email": "ritesh371@gmail.com",
+      "mobile": "6370237335",
+      "id": "2"
+    },
+    {
+      "name": "Abhishek Dhar",
+      "email": "abhishekdhar508@gmail.com",
+      "mobile": "8569233561",
+      "id": "fb3d"
+    },
+    {
+      "name": "Jeeban Behera",
+      "email": "jeeban768@gmsil.com",
+      "mobile": "9867344124",
+      "id": "d25c"
+    },
+    {
+      "id": "7069",
+      "name": "Bikash Behera",
+      "email": "bikash34@gmail.com",
+      "mobile": "7687645324"
+    }
+  ]
+}
