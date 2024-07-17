@@ -9,6 +9,10 @@ function App() {
   const [mobile, setMobile] = useState("");
   const [userid,setUserId] = useState("");
 
+  //part of previous state
+  const [count,setCount] = useState(0);
+  const [prev,setPrev] = useState(0);
+
 
   // fetch() return a promis with a result that catched by then()->(then always takes a callback function) after that
   //we have to convert the result to json() and that return a another promis with the responce of json format.
@@ -84,6 +88,26 @@ function App() {
         getUsers();
       })
     })
+  }
+
+  //part of Previous State
+  function updateState(){
+    let val = Math.floor(Math.random()*100);
+    setCount((previous)=>{ //setCount return a callback function that return the previous state or value
+      setPrev(previous);
+      return val; // and we have to return that value which you want to set
+    })
+  }
+  //part of Previous State
+  function updatebyFive(){
+    for(let i=0;i<5;i++){
+      // setCount(count+1)//This logic can't increase the count by 5 so be careful
+      //instade of doing this when you use for loop and set function of useState then always use a call back 
+      //function to set values and value set through "Previous value".
+      setCount((previous)=>{
+        return previous+1;//This operation gives the right increament.
+      })
+    }
   }
 
   return (
@@ -164,6 +188,14 @@ function App() {
         >
           Add Users
         </button>
+      </div>
+
+      <div className="previous">
+        <h2>Learn Previous State</h2>
+        <p>Previous State : {prev}</p>
+        <p>Current State : {count}</p> 
+        <button onClick={updateState} style={{margin:"5px",padding:"8px",backgroundColor:"#9cea9c",border:"1px solid #326832"}}>Update State</button>
+        <button onClick={updatebyFive} style={{margin:"5px",padding:"8px",backgroundColor:"#9cea9c",border:"1px solid #326832"}}>Increase by 5</button>
       </div>
     </div>
   );
