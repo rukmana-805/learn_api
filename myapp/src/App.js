@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import Prevprops from "./Components/Prevprops";
 
 function App() {
   const [data, setData] = useState([]);
@@ -13,6 +14,8 @@ function App() {
   const [count,setCount] = useState(0);
   const [prev,setPrev] = useState(0);
 
+  //part of previous props
+  const [step,setStep] = useState(0);
 
   // fetch() return a promis with a result that catched by then()->(then always takes a callback function) after that
   //we have to convert the result to json() and that return a another promis with the responce of json format.
@@ -197,6 +200,10 @@ function App() {
         <button onClick={updateState} style={{margin:"5px",padding:"8px",backgroundColor:"#9cea9c",border:"1px solid #326832"}}>Update State</button>
         <button onClick={updatebyFive} style={{margin:"5px",padding:"8px",backgroundColor:"#9cea9c",border:"1px solid #326832"}}>Increase by 5</button>
       </div>
+
+      {/* Part of previous props */}
+      <Prevprops step = {step}/>
+      <button onClick={()=>{setStep(Math.floor(Math.random()*10))}} style={{margin:"5px",padding:"8px",backgroundColor:"#9cea9c",border:"1px solid #326832"}}>Update Props</button>
     </div>
   );
 }
